@@ -104,7 +104,6 @@ Check the page views state which was set by nodejs app, navigate to: `http://loc
 
 Create a POST request against: `http://localhost:8000/api/set-page-view` and see the console in which nodejs app is running
 
-[requests.http](https://github.com/usamaimran3/dapr-with-node-php/blob/main/php-app/requests.http)
 ```http
 POST http://localhost:8000/api/set-page-view
 
