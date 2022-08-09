@@ -46,7 +46,7 @@ using the Visual Studio Code [Rest Client Plugin](https://marketplace.visualstud
 
 Create a POST request against: `http://localhost:3500/v1.0/invoke/nodeapp/method/set-page-views` and see the console
 
-[requests.http](requests.http)
+[requests.http](https://github.com/usamaimran3/dapr-with-node-php/blob/main/node-app/requests.http)
 ```http
 POST http://localhost:3500/v1.0/invoke/nodeapp/method/set-page-views
 
@@ -61,7 +61,7 @@ POST http://localhost:3500/v1.0/invoke/nodeapp/method/set-page-views
 Now, to verify the page views were successfully persisted to the state store, create a GET request against: `http://localhost:3500/v1.0/invoke/nodeapp/method/show-page-views` and see the console
 
 
-[requests.http](requests.http)
+[requests.http](https://github.com/usamaimran3/dapr-with-node-php/blob/main/node-app/requests.http)
 ```http
 GET http://localhost:3500/v1.0/invoke/nodeapp/method/show-page-views
 ```
@@ -104,7 +104,7 @@ Check the page views state which was set by nodejs app, navigate to: `http://loc
 
 Create a POST request against: `http://localhost:8000/api/set-page-view` and see the console in which nodejs app is running
 
-[requests.http](requests.http)
+[requests.http](https://github.com/usamaimran3/dapr-with-node-php/blob/main/php-app/requests.http)
 ```http
 POST http://localhost:8000/api/set-page-view
 
