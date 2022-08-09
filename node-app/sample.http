@@ -1,0 +1,9 @@
+POST http://localhost:3500/v1.0/invoke/nodeapp/method/set-page-views
+
+{
+    "pageViews": 30
+}
+
+###
+
+GET http://localhost:3500/v1.0/invoke/nodeapp/method/show-page-views
