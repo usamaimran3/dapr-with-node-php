@@ -54,7 +54,7 @@ POST http://localhost:3500/v1.0/invoke/nodeapp/method/set-page-views
     "pageViews": 30
 }
 ```
-![Console View](/node-app/img/post_output.png)
+![Console View](<https://raw.githubusercontent.com/usamaimran3/dapr-with-node-php/main/node-app/img/post_output.PNG>)
 
 ## Confirm successful persistence
 
@@ -65,7 +65,7 @@ Now, to verify the page views were successfully persisted to the state store, cr
 ```http
 GET http://localhost:3500/v1.0/invoke/nodeapp/method/show-page-views
 ```
-![Console View](/node-app/img/console.png)
+![Console View](<https://raw.githubusercontent.com/usamaimran3/dapr-with-node-php/main/node-app/img/console.PNG>)
 
 #  Run the PHP App with Dapr
 
@@ -98,7 +98,7 @@ Now open a **new** terminal and go to the `./php-app` directory.
 
 Check the page views state which was set by nodejs app, navigate to: `http://localhost:8000` in the browser
 
-![Brower View](/php-app/public/page_views.png)
+![Brower View](<https://raw.githubusercontent.com/usamaimran3/dapr-with-node-php/main/php-app/public/page_views.PNG>)
 
 ## Interact with NodeJs service to update the state
 
@@ -112,4 +112,4 @@ POST http://localhost:8000/api/set-page-view
     "pageViews": 50
 }
 ```
-![Console View](/php-app/public/console.png)
+![Console View](<https://raw.githubusercontent.com/usamaimran3/dapr-with-node-php/main/php-app/public/console.PNG>)
