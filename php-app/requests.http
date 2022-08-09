@@ -1,0 +1,11 @@
+GET http://localhost:8000/
+
+###
+POST http://localhost:8000/api/nodeapp/set-page-view
+
+{
+    "pageViews": 50
+}
+
+
+
