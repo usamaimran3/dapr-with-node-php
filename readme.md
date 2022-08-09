@@ -44,7 +44,9 @@ You're up and running! Both Dapr and your app logs will appear here.
 
 using the Visual Studio Code [Rest Client Plugin](https://marketplace.visualstudio.com/items?itemName=humao.rest-client)
 
-[sample.http](sample.http)
+Create a POST request against: `http://localhost:3500/v1.0/invoke/nodeapp/method/set-page-views` and see the console
+
+[requests.http](requests.http)
 ```http
 POST http://localhost:3500/v1.0/invoke/nodeapp/method/set-page-views
 
@@ -52,15 +54,62 @@ POST http://localhost:3500/v1.0/invoke/nodeapp/method/set-page-views
     "pageViews": 30
 }
 ```
+![Console View](/node-app/img/post_output.png)
 
 ## Confirm successful persistence
 
-Now, to verify the page views were successfully persisted to the state store, create a GET request against: `http://localhost:3500/v1.0/invoke/nodeapp/method/show-page-views`
+Now, to verify the page views were successfully persisted to the state store, create a GET request against: `http://localhost:3500/v1.0/invoke/nodeapp/method/show-page-views` and see the console
 
 
-[sample.http](sample.http)
+[requests.http](requests.http)
 ```http
 GET http://localhost:3500/v1.0/invoke/nodeapp/method/show-page-views
 ```
+![Console View](/node-app/img/console.png)
 
+#  Run the PHP App with Dapr
 
+Now open a **new** terminal and go to the `./php-app` directory.
+
+## Step 1 - Install dependencies
+
+   ```bash
+   composer install
+   ```
+## Step 2 - Rename 
+
+   ```bash
+   rename .env.example .env
+   ```
+
+## Step 3 - Key genrate 
+
+   ```bash
+   php artisan key:generate
+   ```
+
+## Step 4 - Start the PHP App with Dapr:
+
+   ```bash
+   dapr run --app-id phpapp --app-port 3001 --dapr-http-port 3501 php artisan serve
+   ```
+
+## Running the services
+
+Check the page views state which was set by nodejs app, navigate to: `http://localhost:8000` in the browser
+
+![Brower View](/php-app/public/page_views.png)
+
+## Interact with NodeJs service to update the state
+
+Create a POST request against: `http://localhost:8000/api/set-page-view` and see the console in which nodejs app is running
+
+[requests.http](requests.http)
+```http
+POST http://localhost:8000/api/set-page-view
+
+{
+    "pageViews": 50
+}
+```
+![Console View](/php-app/public/console.png)
